@@ -14,4 +14,38 @@ Obviously this means I want the best of both worlds
 I also want a icon in the launcher, this is obviously linux/ubuntu specific but after looking into it other OS may be linked in.
 
 
+#Plan of action
 
+##What I will be using
+Outside sources I will be using
+
+* DataTables
+* jQuery
+* HTML5BP
+
+Tools I will be using
+* Vim (of course)
+* Terminator (a multiple terminal emulator)
+
+##Proposed File Tree
+<pre>
+./
+|---non-public/
+|   |---bash-handler/
+|   |---models/
+|   |---config/
+|   |   |---config.php
+|   |   |---functions.php
+|   |   |---prelims.php
+|   |---controllers/
+|   |---views/
+|   |   |---index.php
+|---public/
+|   |---css/
+|   |---js/
+|   |---img/
+|   |---vendor-specific/
+|   |---.htaccess
+|   |---index.php
+|
+</pre>
