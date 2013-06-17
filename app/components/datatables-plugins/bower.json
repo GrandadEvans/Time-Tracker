@@ -1,0 +1,9 @@
+{
+  "name": "datatables-plugins",
+  "version": "0.0.0",
+  "commit": "567bfc0435b29086fe11134e045e13e8e4a81ca8",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DataTables/Plugins.git"
+  }
+}
