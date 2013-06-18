@@ -1,4 +1,6 @@
-<?php require_once('getProgram.class.php');?><!doctype html>
+<?php
+    require_once('prelims.php');
+    require_once('getProgram.class.php');?><!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -34,7 +36,7 @@
                 <p>Window information: You have been on this window (<span style="color:darkRed"
                     id="current-project"><?php
                     $window = new getProgram;
-                    $windowTitle = $window->getTitle(); echo $windowTitle;?></span>) for un unspefied amount of time.<small>Why
+                    $windowTitle = $window->worker(); echo $windowTitle;?></span>) for un unspefied amount of time.<small>Why
                         unspecified?</small></p>
             </div>
 
@@ -45,17 +47,35 @@
                     <thead>
                         <th><input type="checkbox" /></th>
 
-                        <th>Project ID</th>
                         <th>Project Name</th>
                         <th>Keywords</th>
-                        <th>Start Date</th>
+                        <!--<th>Start Date</th>-->
                         <th>Last Active</th>
-                        <th>Total (Hrs)</th>
                         <th>Actions</th>
                         <th>Remarks</th>
                     </thead>
 
                     <tbody>
+                    <?php
+                        require_once('./models/default.class.php');
+                        $obj = new defaultDB;
+                        $results = $obj->getDefaultListings();
+                        foreach($results as $key => $value)
+                            {
+                            ?>
+                            <tr data-project_id="<?php echo $value[0];?>">
+                                <td><input type="checkbox" id="project_<?php echo $value[0];?>_checkbox" /></td>
+                                <td><?php echo $value[1];?></td>
+                                <td><?php echo $value[2];?></td>
+                                <!--<td><?php echo $value[3];?></td> -->
+                                <td><?php echo $value[4];?></td>
+                                <td>
+                                    <i class="icon-remove icon-black"></i>
+                                    <i class="icon-download icon-black"></i>
+                                </td>
+                                <td><?php echo $value[6];?></td>
+                            </tr>
+                            <?php }?>
                     </tbody>
 
                 </table>
