@@ -100,6 +100,8 @@ function getTitle(windowTitle)
 
                                 // Add an active icon to the project
                                 $('#project_' + project + '_icons').append('<img class="active_icon" src="images/active.png" alt="active" height="14" width="14" />');
+
+                                $('#favicon').attr('href', 'images/green_favicon.ico');
                             }
 
                         } // end of ajax success
@@ -158,6 +160,8 @@ function removeActiveProjects()
         $(this).css('border', '2px solid red');
         $(this).remove();
     });
+
+    $('#favicon').attr('href', 'favicon.ico');
 
 }
 } // End of getTitle function
