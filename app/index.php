@@ -63,13 +63,14 @@
                         foreach($results as $key => $value)
                             {
                             ?>
-                            <tr data-project_id="<?php echo $value[0];?>">
+                            <tr data-project_id="<?php echo $value[0];?>" id="project_<?php echo
+                                $value[0];?>">
                                 <td><input type="checkbox" id="project_<?php echo $value[0];?>_checkbox" /></td>
                                 <td><?php echo $value[1];?></td>
                                 <td><?php echo $value[2];?></td>
                                 <!--<td><?php echo $value[3];?></td> -->
                                 <td><?php echo $value[4];?></td>
-                                <td>
+                                <td id="project_<?php echo $value[0];?>_icons">
                                     <i class="icon-remove icon-black"></i>
                                     <i class="icon-download icon-black"></i>
                                 </td>
